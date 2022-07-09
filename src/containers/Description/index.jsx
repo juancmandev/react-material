@@ -9,15 +9,15 @@ export const Description = (props) => {
 
   return (
     <>
-      <Stack>
-        {bio !== null ? (
-          <Typography>{bio}</Typography>
-        ) : (
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,
-            ducimus.
-          </Typography>
-        )}
+      <Stack
+        sx={{
+          justifyContent: 'center',
+        }}>
+        <Typography variant='body1'>
+          {bio !== null
+            ? bio
+            : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, ducimus.'}
+        </Typography>
       </Stack>
       <PaperInformation userState={userState} />
       <LocationInformation userState={userState} />
