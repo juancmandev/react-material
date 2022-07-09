@@ -3,7 +3,7 @@ import { Stack, TextField, IconButton, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 export const Searcher = (props) => {
-  const { inputUser, setInputUser } = props;
+  const { setInputUser } = props;
 
   const [valueInput, setValueInput] = useState('');
 
@@ -12,7 +12,9 @@ export const Searcher = (props) => {
     setValueInput(inputValue);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    setInputUser(valueInput);
+  };
 
   return (
     <Stack
@@ -31,7 +33,7 @@ export const Searcher = (props) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position='start'>
-              <IconButton onClick={() => handleSubmit(setInputUser, inputUser)}>
+              <IconButton onClick={handleSubmit}>
                 <SearchIcon />
               </IconButton>
             </InputAdornment>
